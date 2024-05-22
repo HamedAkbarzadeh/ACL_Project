@@ -1,17 +1,23 @@
 <?php
+
 namespace App\includes;
 
 use PDO;
 
+function getDBConnection()
+{
+
     $db_username = 'root';
     $db_password = '';
-    $db_name = 'mini_permission_project';
+    $db_name = 'acl_project';
+    $db_host = '127.0.0.1:8111';
 
-    $db = new PDO('mysql:host=127.0.0.1;dbname='.$db_name.';charset=utf8',$db_username,$db_password);
+    $db = new PDO('mysql:host=' . $db_host . ';dbname=' . $db_name . ';charset=utf8', $db_username, $db_password);
 
-    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
-    $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY , true);
-    $db->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    define('APP_NAME' , 'PHP REST API TUTORIAL');
-?>
+    return $db;
+}
+define('APP_NAME', 'PHP REST API TUTORIAL');
