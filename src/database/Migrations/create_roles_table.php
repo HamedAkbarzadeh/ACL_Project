@@ -1,14 +1,15 @@
 <?php
 
-namespace App\database\migrations;
+namespace App\Database\Migrations;
 
 
-class Roles{
+class create_roles_table{
 
-    function Role(){
+    function RoleTable(){
         $sql ="CREATE TABLE Roles(
             id INT AUTO_INCREMENT PRIMARY KEY,
             name varchar(255) UNIQUE,
+            status TINYINT DEFAULT 0, 
             description varchar(255),
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
         )";

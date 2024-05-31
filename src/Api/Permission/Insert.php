@@ -1,20 +1,20 @@
 <?php
 
-namespace App\api;
-use App\core\Permission;
+namespace App\Api\Permission;
+use App\Core\Permission;
 
 //header
-header('Access-Control_Allow_Origin: *');
+header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 //initializing our api
-include_once('../core/initialize.php');
+include_once('../../core/initialize.php');
 
 
 $data = array(
     'name' => $_POST['name'],
     'status' => $_POST['status'],
-    'date' => date('Y-m-d H:i:s'),
+    'description' => $_POST['description'],
 );
 
 $new_permission = new Permission($db);
