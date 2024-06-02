@@ -35,10 +35,10 @@ class DatabaseSeeder{
     function CreateTableRole(){
         $role = new create_roles_table();
         $sql = $role->RoleTable();
-        if($this->tableExists('roles')){
-            echo "roles table is exists in database" . PHP_EOL;
-            return;
-        }
+        // if($this->tableExists('roles')){
+        //     echo "roles table is exists in database" . PHP_EOL;
+        //     return;
+        // }
         if($this->db->exec($sql)){
             echo "successfully ti added roles Table" . PHP_EOL;
         }else{
@@ -50,10 +50,10 @@ class DatabaseSeeder{
     function createTablePermission(){
         $permission = new create_permissions_table();
         $sql = $permission->PermissionTable();
-        if($this->tableExists('permissions')){
-            echo "permissions table is exists in database " . PHP_EOL;
-            return;
-        }
+        // if($this->tableExists('permissions')){
+        //     echo "permissions table is exists in database " . PHP_EOL;
+        //     return;
+        // }
         if($this->db->exec($sql)){
             echo "successfully to added permissions Table" . PHP_EOL;
         }else{
@@ -65,10 +65,10 @@ class DatabaseSeeder{
     function createTablePermission_role(){
         $permissions_role = new create_permission_role_table();
         $sql = $permissions_role->permission_roleTable();
-        if($this->tableExists('permission_role')){
-            echo "permission_role table is exists in database " . PHP_EOL;
-            return;
-        }
+        // if($this->tableExists('permission_role')){
+        //     echo "permission_role table is exists in database " . PHP_EOL;
+        //     return;
+        // }
         if($this->db->exec($sql)){
             echo "successfully to added permission_role Table" . PHP_EOL;
         }else{
@@ -129,4 +129,4 @@ $seed = new DatabaseSeeder($db);
 // $seed->createTablePermission_role();
 // $seed->createTableUsers();
 // $seed->createTablePermission_user();
-$seed->createTableRole_user();
+// $seed->createTableRole_user();

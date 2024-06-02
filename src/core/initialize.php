@@ -15,7 +15,7 @@ require SITE_ROOT.DS."../vendor/autoload.php";
     require_once(INC_PATH.DS."config.php");
     $db = \App\includes\getDBConnection();
     //core class
-    require_once(CORE_PATH.DS."permission".DS."Permission.php");
-    require_once(CORE_PATH.DS."role".DS."Role.php");
+    require_once(CORE_PATH.DS."permission".DS."PermissionCRUD.php");
+    require_once(CORE_PATH.DS."role".DS."RoleCRUD.php");
 
 ?>

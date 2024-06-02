@@ -1,13 +1,18 @@
 <?php
 namespace App\Core;
 
+use ConditionSqlTrait;
+
+require_once "../../Services/Trait/ConditionSqlTrait.php";
 
 class Permission{
     
+    use ConditionSqlTrait;
+
+
     private $name;
     private $status;
     private $description;
-    private $date;
     private $conn;
     
 
@@ -17,8 +22,7 @@ class Permission{
 
     public function insert($data){
         $this->name = $data['name'];
-        $this->status = $data['status'];
-        $this->date = $data['date'];
+        $this->status = $data['status']; 
         $this->description = $data['description'];
 
         $query = "INSERT INTO `permissions` (`id` , `name` , `status` , `description` , `created_at`) VALUES (NULL , ? , ? , ? , ?)";
@@ -32,9 +36,5 @@ class Permission{
         }else{
             return false;
         }
-    }
-    public function readAll(){
-        
-    }
-
+    } 
 }
